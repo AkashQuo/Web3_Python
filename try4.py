@@ -20,7 +20,7 @@ if w3.is_connected():
                 print(f"Transaction Hash: {tx['hash'].hex()}")
 
     # Get the latest block number
-    latest_block_number = w3.eth.blockNumber
+    latest_block_number = w3.eth.block_number
 
     # Specify the block range for confirmed transactions
     block_range = range(latest_block_number - 10, latest_block_number + 1)  # Adjust the range as needed
