@@ -1,8 +1,8 @@
 from web3 import Web3
+ 
+ethereum_node_url = "https://goerli.infura.io/v3/b8b2ea2f8f4e4ccab7405e9e802ac175"
 
-ethereum_node_url = "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID"
-
-eth_address = "0xYourEthAddressHere"
+eth_address = "0x3EAC7cE1c7250b840e74Afd25D06284f07bF1372"
 
 w3 = Web3(Web3.HTTPProvider(ethereum_node_url))
 
