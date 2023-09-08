@@ -6,7 +6,7 @@ eth_address = "0x3EAC7cE1c7250b840e74Afd25D06284f07bF1372"
 
 w3 = Web3(Web3.HTTPProvider(ethereum_node_url))
 
-if w3.isConnected():
+if w3.is_connected():
     print("Connected to Ethereum node")
 
     # Get the pending transactions
@@ -15,7 +15,7 @@ if w3.isConnected():
     if pending_txns:
         print("Pending Transactions:")
         for tx_hash in pending_txns:
-            tx = w3.eth.getTransaction(tx_hash)
+            tx = w3.eth.get_transaction(tx_hash)
             if eth_address.lower() == tx['to'].lower() or eth_address.lower() == tx['from'].lower():
                 print(f"Transaction Hash: {tx['hash'].hex()}")
 
@@ -28,7 +28,7 @@ if w3.isConnected():
     confirmed_txns = []
 
     for block_number in block_range:
-        block = w3.eth.getBlock(block_number, full_transactions=True)
+        block = w3.eth.get_block(block_number, full_transactions=True)
 
         if block and 'transactions' in block:
             for tx in block['transactions']:
